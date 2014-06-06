@@ -9,13 +9,26 @@
 </head>
 
 <body>
-
+<script>
+	var clickCount = 0;
+	document.onclick = click;
+	function click() {
+		if(clickCount < 5) {
+			alert("Please don't touch me");
+		} else if(clickCount < 10 && clickCount > 5){
+			alert("I SWEAR ON ME MUM M8 STOP TOUCHING ME!!!");
+		} else if(clickCount > 100) {
+			alert("Wow. You have no life.");
+		}
+		clickCount++;
+	};
+</script>
 <!-- Begin navbar -->
 <header>
   <nav>
      <ul>
 	 <!-- Remove whitespace from inline-block -->
-        <li><a href="home.html">Home</a></li
+        <li><a href="index.html">Home</a></li
 		><li>
             <a href="teset.html">Test1 <span class="carrot"></span></a>
             <div>
@@ -33,7 +46,7 @@
 </header>
 <!-- End navbar -->
 
-<p id="lolbig">BEST WEBSITE EVER</p>
+<p id="lolbig">EASTER EGG!!!</p>
 
 <!-- Begin footer -->
 <footer>
