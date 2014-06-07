@@ -138,8 +138,15 @@ footer {
 	background-color: #33b5e5;
 }
 
+footer a {
+	text-decoration:none;
+}
+
 #copyright {
-	color:#FFF;
+	position:absolute;
+	display:inline;
 	text-align:center;
+	color:#FFF;
 	margin-top:2em;	
+	margin-left:43%;
 }
