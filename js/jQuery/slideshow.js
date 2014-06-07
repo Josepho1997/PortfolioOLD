@@ -7,7 +7,9 @@ $(document).ready(function(){
 	 var initialMargin = parseInt($(".ssimages li").css("marginLeft"));
 	 var position = 0;
 	 var imageWidth = images.width() + 20;
-	 alert(imageWidth);
+	 if(imageWidth < 21) {
+		imageWidth += 300;
+	 }
 	 var hasMoved = false;
 	 var hasResized = false;
 	 var windowWidth;
@@ -60,6 +62,9 @@ $(document).ready(function(){
 		 windowWidth = $(window).width();
  		 windowHeight = $(window).height();
 		 var imgWidth = $(images[1]).width();
+		 if(imgWidth === 0) {
+			imgWidth = 300;
+		 }
 		 var marginL = (((windowWidth/2) - (imgWidth/2)) / windowWidth) * 100;
 		 $(".ssimages li").css("margin-left", '' + marginL + '%');
 		 hasResized = true;
