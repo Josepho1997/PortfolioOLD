@@ -7,8 +7,10 @@ body {
 }
 
 .ssimages li {
+	position:absolute;
 	margin-left:35%;
 };
+
 
 
 h1 {
@@ -21,5 +23,9 @@ h1 {
 
 hr {
 	width:75%;	
+}
+
+#test {
+	position:relative;	
 }
 

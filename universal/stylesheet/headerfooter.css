@@ -8,6 +8,7 @@ html {
 body {
 	margin: 0 0 5em; /* bottom = footer height */
 	padding: 0;
+	height: 100%;
 }
 
 nav{

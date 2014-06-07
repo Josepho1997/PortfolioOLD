@@ -4,10 +4,14 @@ $(document).ready(function(){
 	 var images = $('ul.ssimages li');
 	 var lastElem = images.length-1;
 	 var target;
-	 var margin = parseInt($(".ssimages li").css("marginLeft"));
-	 var position = margin /((margin/24)/2)
-	 var imageWidth = images.width();
+	 var initialMargin = parseInt($(".ssimages li").css("marginLeft"));
+	 var position = 0;
+	 var imageWidth = images.width() + 20;
+	 alert(imageWidth);
 	 var hasMoved = false;
+	 var hasResized = false;
+	 var windowWidth;
+	 var windowHeight;
 	 
 	 //Set CSS Properties
 	 $(".ssimages li").css("display", "inline-block");
@@ -22,13 +26,13 @@ $(document).ready(function(){
 		 for(var i = 0; i < images.length; i++) {
 			 if(target != 0) { 
 				if(i != target && i != target-1) {
-				  	$(images[i]).css('opacity', '0');  
+				 	$(images[i]).css('opacity', '0');  
 				} else {
 					$(images[i]).css('opacity', '1');
 				}
 			 } else {
 				 if(i != target && i != lastElem) {
-				  	$(images[i]).css('opacity', '0');  
+					$(images[i]).css('opacity', '0');  
 				} else {
 					$(images[i]).css('opacity', '1'); 
 				}
@@ -37,24 +41,37 @@ $(document).ready(function(){
 
 
 		 $(images[target]).fadeIn({queue: false, duration: 2000});
-		 $(images[target]).animate({left:position + 'px'}, 2000);		
-		// alert(target);
+		 $(images[target]).animate({left: 0 + 'px'}, 2000);
 
 		 
 		 if(target != 0) {
 			 $(images[target-1]).fadeOut({queue: false, duration: 2000});
-			 $(images[target-1]).animate({left: position-imageWidth + 'px'}, 2000);
-			 $(images[target-1]).animate({left:position+imageWidth + 'px'}, 2000);
+			 $(images[target-1]).animate({left: -imageWidth + 'px'}, 2000);
+			 $(images[target-1]).animate({left: imageWidth + 'px'}, 2000);
 		 } else {
 			 $(images[lastElem]).fadeOut({queue: false, duration: 2000});
-			 $(images[lastElem]).animate({left: position-imageWidth + 'px'}, 2000);
-			 $(images[lastElem]).animate({left:position+imageWidth + 'px'}, 2000);
+			 $(images[lastElem]).animate({left: -imageWidth + 'px'}, 2000);
+			 $(images[lastElem]).animate({left: imageWidth + 'px'}, 2000);
 		 }
-		 
-		 
 		 hasMoved = true;
-
 	 }
+	 
+	 if(hasResized === false) {
+		 windowWidth = $(window).width();
+ 		 windowHeight = $(window).height();
+		 var imgWidth = $(images[1]).width();
+		 var marginL = (((windowWidth/2) - (imgWidth/2)) / windowWidth) * 100;
+		 $(".ssimages li").css("margin-left", '' + marginL + '%');
+		 hasResized = true;
+	 }
+	 
+	 $(window).resize(function(){
+		 windowWidth = $(window).width();
+ 		 windowHeight = $(window).height();
+		 var imgWidth = $(images[1]).width();
+		 var marginL = (((windowWidth/2) - (imgWidth/2)) / windowWidth) * 100;
+		 $(".ssimages li").css("margin-left", '' + marginL + '%');
+	 });
 	 
 	 function sliderTiming() {
 	   target = $('ul.ssimages li.selected').index();
@@ -71,6 +88,16 @@ $(document).ready(function(){
 				  $(images[i]).css('opacity', '0'); 
 			  }
 		  }
+	 }	 
+	 
+	if(hasResized === false) {
+		 windowWidth = $(window).width();
+ 		 windowHeight = $(window).height();
+		 var imageWidth = $(images[1]).width();
+		 var marginL = (((windowWidth/2) - (imageWidth/2)) / windowWidth) * 100;
+		 $(".ssimages li").css("margin-left", '' + marginL + '%');
+		 margin = parseInt($(".ssimages li").css("marginLeft"));
+		 position = margin;
 	 }
 
 	var timingRun = setInterval(function() { sliderTiming(); },5000);
