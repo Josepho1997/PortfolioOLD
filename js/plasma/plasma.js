@@ -5,8 +5,6 @@ $(document).ready(function(){
 	var screenHeight =  screen.height;
 	var difference = (screenHeight-contentHeight)/16;
 	
-	$("#push").css("height", difference + 'em');
-	
 	$(window).resize(function(){
 		 contentHeight = $("#content").height();
 		 windowHeight =  $(window).height();

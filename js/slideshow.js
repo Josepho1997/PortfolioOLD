@@ -6,7 +6,7 @@ $(document).ready(function(){
 	 var target;
 	 var initialMargin = parseInt($(".ssimages li").css("marginLeft"));
 	 var position = 0;
-	 var imageWidth = images.width() + 20;
+	 var imageWidth;
 	 if(imageWidth < 21) {
 		imageWidth += 300;
 	 }
@@ -55,6 +55,8 @@ $(document).ready(function(){
 			 $(images[lastElem]).animate({left: -imageWidth + 'px'}, 2000);
 			 $(images[lastElem]).animate({left: imageWidth + 'px'}, 2000);
 		 }
+		 
+		 alert(imageWidth);
 		 hasMoved = true;
 	 }
 	 
@@ -62,6 +64,7 @@ $(document).ready(function(){
 		 windowWidth = $(window).width();
  		 windowHeight = $(window).height();
 		 var imgWidth = $(images[1]).width();
+		 imageWidth = imgWidth + 20;
 		 if(imgWidth === 0) {
 			imgWidth = 300;
 		 }
@@ -74,6 +77,7 @@ $(document).ready(function(){
 		 windowWidth = $(window).width();
  		 windowHeight = $(window).height();
 		 var imgWidth = $(images[1]).width();
+		 imageWidth = imgWidth + 20;
 		 var marginL = (((windowWidth/2) - (imgWidth/2)) / windowWidth) * 100;
 		 $(".ssimages li").css("margin-left", '' + marginL + '%');
 	 });
@@ -98,8 +102,8 @@ $(document).ready(function(){
 	if(hasResized === false) {
 		 windowWidth = $(window).width();
  		 windowHeight = $(window).height();
-		 var imageWidth = $(images[1]).width();
-		 var marginL = (((windowWidth/2) - (imageWidth/2)) / windowWidth) * 100;
+		 var imgWidth = $(images[1]).width();
+		 var marginL = (((windowWidth/2) - (imgWidth/2)) / windowWidth) * 100;
 		 $(".ssimages li").css("margin-left", '' + marginL + '%');
 		 margin = parseInt($(".ssimages li").css("marginLeft"));
 		 position = margin;
