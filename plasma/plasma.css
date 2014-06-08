@@ -36,6 +36,6 @@ hr {
 }
 
 #push {
-	position:relative;	
-	width:1px;
+	position:relative;
+	width: 0.01em;
 }
