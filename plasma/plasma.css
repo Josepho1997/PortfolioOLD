@@ -6,6 +6,8 @@ body {
 	padding:0;
 }
 
+
+
 #content p {
 	font-family:"Roboto", Verdana, Geneva, sans-serif;
 	font-size: 1.5em;	
@@ -17,7 +19,6 @@ body {
 }
 
 .ssimages li {
-	position:absolute;
 	margin-left:35%;
 }
 
@@ -34,3 +35,8 @@ hr {
 	width:75%;	
 }
 
+#push {
+	position:relative;	
+	width:1px;
+	border: 1px solid red;
+}

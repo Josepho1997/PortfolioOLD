@@ -3,3 +3,7 @@
 	font-size: 10em;
 	text-align:center;
 }
+
+#abs {
+	position:absolute;
+}
