@@ -2,13 +2,14 @@
 
 $(document).ready(function(){
 	var contentHeight = $("#content").height();
+	var footerHeight = $("#footer").height();
 	var screenHeight =  screen.height;
-	var difference = (screenHeight-contentHeight)/16;
+	var difference = (screenHeight-contentHeight-footerHeight)/16;
 	
 	$(window).resize(function(){
 		 contentHeight = $("#content").height();
-		 windowHeight =  $(window).height();
-		 difference = (screenHeight-contentHeight)/16;
+		 footerHeight = $("#footer").height();
+		 difference = (screenHeight-contentHeight-footerHeight)/16;
 		$("#push").css("height", difference + 'em');
 	 });
 });
