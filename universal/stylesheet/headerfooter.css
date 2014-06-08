@@ -15,7 +15,7 @@ nav{
 	font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
 	font-weight: 300;
 	font-size: 1em;
-	background-color: #0F0F0F;
+	background: url(../images/nav_bg.png);
 	box-shadow: 0 0.125em 0.125em -0.063em rgba(0, 0, 0, 0.055);
 	color: #888;
 	display: block;
@@ -119,8 +119,8 @@ nav > ul > li > div ul > li > a {
 
 /*** Add hover effect for dropdown list items ***/
 nav > ul > li > div ul > li:hover > a {
-	color: #1F1F1F;
-	background-color: #999;
+	color: #FFF;
+	background: url(../images/nav_hover_bg.png);
 }
 
 /*** Show div when it is being li is being hovered over ***/
@@ -136,7 +136,7 @@ footer {
     bottom: 0;
     height: 5em;
     width: 100%;
-	background-color: #0F0F0F;
+	background: url(../images/nav_bg.png);
 }
 
 footer a {
