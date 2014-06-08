@@ -56,7 +56,6 @@ $(document).ready(function(){
 			 $(images[lastElem]).animate({left: imageWidth + 'px'}, 2000);
 		 }
 		 
-		 alert(imageWidth);
 		 hasMoved = true;
 	 }
 	 
@@ -64,10 +63,10 @@ $(document).ready(function(){
 		 windowWidth = $(window).width();
  		 windowHeight = $(window).height();
 		 var imgWidth = $(images[1]).width();
-		 imageWidth = imgWidth + 20;
 		 if(imgWidth === 0) {
 			imgWidth = 300;
 		 }
+		 imageWidth = imgWidth + 20;
 		 var marginL = (((windowWidth/2) - (imgWidth/2)) / windowWidth) * 100;
 		 $(".ssimages li").css("margin-left", '' + marginL + '%');
 		 hasResized = true;
@@ -77,6 +76,9 @@ $(document).ready(function(){
 		 windowWidth = $(window).width();
  		 windowHeight = $(window).height();
 		 var imgWidth = $(images[1]).width();
+		 if(imgWidth === 0) {
+			imgWidth = 300;
+		 }
 		 imageWidth = imgWidth + 20;
 		 var marginL = (((windowWidth/2) - (imgWidth/2)) / windowWidth) * 100;
 		 $(".ssimages li").css("margin-left", '' + marginL + '%');
