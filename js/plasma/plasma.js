@@ -1,12 +1,21 @@
 /*** Use jQuery to support all screen resolutions ***/
 
 $(document).ready(function(){
+	/** Set variables **/
 	var contentHeight = $("#content").height();
 	var footerHeight = $("#footer").height();
 	var screenHeight =  screen.height;
 	var difference = (screenHeight-contentHeight-footerHeight)/16;
 	
+	/** Run slideshow **/
+	runSlideShow(20, 300);
+		
 	$("#push").css("height", difference + 'em');
+
+	$("#imgreference").load(function() {
+		var imgHeight = $(this).height()/16;
+		$("#plasmacontent").css("margin-top", imgHeight + 'em');
+	});
 	
 	$(window).resize(function(){
 		 contentHeight = $("#content").height();

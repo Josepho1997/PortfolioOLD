@@ -3,4 +3,5 @@
 body {
 	background: url(../images/bg.png);
 	overflow-x:hidden;
+	font-family: "Roboto", "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
 }

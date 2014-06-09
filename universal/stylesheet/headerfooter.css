@@ -12,10 +12,10 @@ body {
 }
 
 nav{
-	font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+	font-family: "Roboto", "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
 	font-weight: 300;
 	font-size: 1em;
-	background: url(../images/nav_bg.png);
+	background-color: #383838;
 	box-shadow: 0 0.125em 0.125em -0.063em rgba(0, 0, 0, 0.055);
 	color: #888;
 	display: block;
@@ -45,7 +45,7 @@ nav ul li {
 	
 /*** Style our navigation items ***/
 nav > ul > li > a { 
-	color: #fff;
+	color: #FFF;
 	display: block;
 	line-height: 3.5em;
 	padding: 0 1.5em;
@@ -72,11 +72,11 @@ nav > ul > li > a > .carrot {
 /*** Add hover animations ***/
   
 nav > ul > li:hover {
-  background-color: #FFF;
+  background-color: #3399CC;
 }
 
 nav > ul > li:hover > a {
-  color: #464646;
+  color: #FFF;
 }
 
 nav > ul > li:hover > a > .caret {
@@ -119,8 +119,7 @@ nav > ul > li > div ul > li > a {
 
 /*** Add hover effect for dropdown list items ***/
 nav > ul > li > div ul > li:hover > a {
-	color: #FFF;
-	background: url(../images/nav_hover_bg.png);
+	color: #3399CC;
 }
 
 /*** Show div when it is being li is being hovered over ***/
@@ -136,7 +135,7 @@ footer {
     bottom: 0;
     height: 5em;
     width: 100%;
-	background: url(../images/nav_bg.png);
+	background-color: #383838;
 }
 
 footer a {

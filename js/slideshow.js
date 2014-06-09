@@ -1,15 +1,12 @@
 /*** My own custom written slide show that took me way too long to make ***/
-
-$(document).ready(function(){
+function runSlideShow(slideshowMargin, imageWidthDefault) {
+	
 	 var images = $('ul.ssimages li');
 	 var lastElem = images.length-1;
 	 var target;
-	 var initialMargin = parseInt($(".ssimages li").css("marginLeft"));
-	 var position = 0;
+	 var lastMargin;
+	 var marginDifference;
 	 var imageWidth;
-	 if(imageWidth < 21) {
-		imageWidth += 300;
-	 }
 	 var hasMoved = false;
 	 var hasResized = false;
 	 var windowWidth;
@@ -20,6 +17,10 @@ $(document).ready(function(){
 	 $(".ssimages li").css("position", "absolute");
 	 
 	 images.first().addClass('selected');
+	 
+	 $("#imgreference").load(function() {
+		imageWidth = $(this).width() + slideshowMargin;
+	 });
 	 
 	 function slide(target) {
 		 images.removeClass('selected').eq(target).addClass('selected');
@@ -43,9 +44,8 @@ $(document).ready(function(){
 
 
 		 $(images[target]).fadeIn({queue: false, duration: 2000});
-		 $(images[target]).animate({left: 0 + 'px'}, 2000);
-
-		 
+		 $(images[target]).animate({left: marginDifference + 'px'}, 2000);
+		 		 
 		 if(target != 0) {
 			 $(images[target-1]).fadeOut({queue: false, duration: 2000});
 			 $(images[target-1]).animate({left: -imageWidth + 'px'}, 2000);
@@ -58,32 +58,7 @@ $(document).ready(function(){
 		 
 		 hasMoved = true;
 	 }
-	 
-	 if(hasResized === false) {
-		 windowWidth = $(window).width();
- 		 windowHeight = $(window).height();
-		 var imgWidth = $(images[1]).width();
-		 if(imgWidth === 0) {
-			imgWidth = 300;
-		 }
-		 imageWidth = imgWidth + 20;
-		 var marginL = (((windowWidth/2) - (imgWidth/2)) / windowWidth) * 100;
-		 $(".ssimages li").css("margin-left", '' + marginL + '%');
-		 hasResized = true;
-	 }
-	 
-	 $(window).resize(function(){
-		 windowWidth = $(window).width();
- 		 windowHeight = $(window).height();
-		 var imgWidth = $(images[1]).width();
-		 if(imgWidth === 0) {
-			imgWidth = 300;
-		 }
-		 imageWidth = imgWidth + 20;
-		 var marginL = (((windowWidth/2) - (imgWidth/2)) / windowWidth) * 100;
-		 $(".ssimages li").css("margin-left", '' + marginL + '%');
-	 });
-	 
+
 	 function sliderTiming() {
 	   target = $('ul.ssimages li.selected').index();
 	   target === lastElem ? target = 0 : target = target+1;
@@ -95,25 +70,36 @@ $(document).ready(function(){
 			  if(i === 0) {
 				$(images[0]).css('opacity', '1');  
 			  } else {
-				  $(images[i]).animate({left: position+imageWidth + 'px'}, 2000);
+				  if(! imageWidth) {
+					  imageWidth = imageWidthDefault + slideshowMargin;
+				  }
+				  $(images[i]).animate({left: imageWidth + 'px'}, 2000);
 				  $(images[i]).css('opacity', '0'); 
 			  }
 		  }
 	 }	 
 	 
-	if(hasResized === false) {
+	 $(window).resize(function(){
 		 windowWidth = $(window).width();
  		 windowHeight = $(window).height();
-		 var imgWidth = $(images[1]).width();
-		 var marginL = (((windowWidth/2) - (imgWidth/2)) / windowWidth) * 100;
+		 var marginL = (((windowWidth/2) - ((imageWidth-slideshowMargin)/2)) / windowWidth) * 100;
+		 lastMargin = parseInt($(".ssimages li").css("marginLeft"))/windowWidth * 100;
+		 marginDifference = marginL - lastMargin;
 		 $(".ssimages li").css("margin-left", '' + marginL + '%');
-		 margin = parseInt($(".ssimages li").css("marginLeft"));
-		 position = margin;
-	 }
+	 });
+	 
+	if(hasResized === false) {	
+		 windowWidth = $(window).width();
+ 		 windowHeight = $(window).height();
+		 var marginL = (((windowWidth/2) - ((imageWidth-slideshowMargin)/2)) / windowWidth) * 100;
+		 lastMargin = parseInt($(".ssimages li").css("marginLeft"))/windowWidth * 100;
+		 marginDifference = marginL - lastMargin;
+		 $(".ssimages li").css("margin-left", '' + marginL + '%');
+	}
 
 	var timingRun = setInterval(function() { sliderTiming(); },5000);
 	function resetTiming() {
 		clearInterval(timingRun);
 		timingRun = setInterval(function() { sliderTiming(); },5000);
 	};
-});
+};
