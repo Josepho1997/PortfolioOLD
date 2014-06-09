@@ -12,10 +12,9 @@ $(document).ready(function(){
 		
 	$("#push").css("height", difference + 'em');
 
-	$("#imgreference").load(function() {
-		var imgHeight = $(this).height()/16;
-		$("#plasmacontent").css("margin-top", imgHeight + 'em');
-	});
+	
+	var imgHeight = $("#imgreference").height()/16;
+	$("#plasmacontent").css("margin-top", imgHeight + 'em');
 	
 	$(window).resize(function(){
 		 contentHeight = $("#content").height();
