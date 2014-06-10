@@ -5,11 +5,9 @@ $(document).ready(function(){
 	setTimeout(function() {
 	var contentHeight = $("#content").height();
 	var footerHeight = $("#footer").height();
-	//var screenHeight =  screen.height;
 	var screenHeight = document.documentElement.clientHeight;
 	var difference = (screenHeight-contentHeight-footerHeight)/16;
 	$("#push").css("height", difference + 'em');
-			alert(screenHeight);
 	}, 300);
 	
 	/** Run slideshow **/
@@ -23,6 +21,5 @@ $(document).ready(function(){
 		 footerHeight = $("#footer").height();
 		 difference = (screenHeight-contentHeight-footerHeight)/16;
 		$("#push").css("height", difference + 'em');
-		 alert(screenHeight);
 	 });
 });
