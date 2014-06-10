@@ -21,5 +21,6 @@ $(document).ready(function(){
 		 footerHeight = $("#footer").height();
 		 difference = (screenHeight-contentHeight-footerHeight)/16;
 		$("#push").css("height", difference + 'em');
+		alert(difference);
 	 });
 });
