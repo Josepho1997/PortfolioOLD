@@ -75,6 +75,7 @@ function runSlideShow(slideshowMargin, imageWidthDefault) {
 				  }
 				  $(images[i]).animate({left: imageWidth + 'px'}, 2000);
 				  $(images[i]).css('opacity', '0'); 
+				  $(images[i]).fadeOut(2000);
 			  }
 		  }
 	 }	 
