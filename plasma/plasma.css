@@ -39,6 +39,7 @@ hr {
 #push {
 	position:relative;
 	width: 0.01em;
+	border: 1px solid red;
 }
 
 #plasmacontent {
