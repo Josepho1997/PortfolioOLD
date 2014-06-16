@@ -2,14 +2,16 @@
 
 $(document).ready(function(){
 	/** Set variables **/
-	setTimeout(function() {
 	var contentHeight = $("#content").height();
 	var footerHeight = $("#footer").height();
 	var screenHeight = $(window).height();
-	var intialScreenHeight = screenHeight;
+	var initialHeight = screenHeight;
 	var difference = (screenHeight-contentHeight-footerHeight)/16;
+	
+	if(difference < 50) {
+		difference += 300;	
+	}
 	$("#push").css("height", difference + 'em');
-	}, 300);
 	
 	/** Run slideshow **/
 	runSlideShow(20, 300);
@@ -18,10 +20,12 @@ $(document).ready(function(){
 	$("#plasmacontent").css("margin-top", imgHeight + 'em');
 	
 	$(window).resize(function(){
-		 screenHeight = $(window).height() + ($(window).height() - intialScreenHeight);
 		 contentHeight = $("#content").height();
 		 footerHeight = $("#footer").height();
-		 difference = (screenHeight-contentHeight-footerHeight)/16;
-		$("#push").css("height", difference + 'em');
+		 if(screenHeight < initialHeight) {
+		 	screenHeight = $(window).height();
+		 }
+		 difference = (screenHeight - contentHeight - footerHeight)/16;
+		 $("#push").css("height", difference + 'em');
 	 });
 });
