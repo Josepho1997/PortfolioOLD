@@ -1,0 +1,199 @@
+@charset "utf-8";
+
+html, body, #body, header {
+	height:100%;	
+	padding:0;
+	margin:0;
+} 
+
+p {
+	padding:0;
+	margin:0;	
+}
+
+
+.normalfontsize {
+	font-size:1em;	
+}
+
+canvas {
+	display:none;	
+}
+
+header {
+	padding:0;
+	margin:0;	
+	background-color:#282828;
+	border:1px solid rgba(0, 0, 0, 0);
+}
+
+#opening {
+	position:relative;
+	width:100%;
+	height:100%;
+	text-align:center;
+}
+
+#opening > a, #opening > nav > ul > li > a {
+	color:#FFF;	
+}
+
+div #title {
+	font-size:2.5em;
+	font-family:"Lato", Georgia, "Times New Roman", Times, serif;
+	text-decoration:none;
+	line-height:2em;
+}
+
+nav {
+	position:relative;
+	line-height:125%;
+}
+
+nav ul {
+	list-style-type:none;
+	font-weight:bold;
+	font-size: 0.9em;
+	font-family:"Roboto", Georgia, "Times New Roman", Times, serif;
+	margin: 0 auto;
+	padding: 0;
+}
+
+nav ul > li {
+	display: inline-block;
+	padding: 0 1.5em;
+}
+
+nav ul li > a {
+	position: relative;
+}
+
+nav ul li > a:before {
+	content: "";
+    position: absolute;
+    width: 100%;
+    height: 0.0625em;
+    bottom: -0.125em;
+    left: 0;
+    background-color: #FFF;
+    visibility: hidden;
+    -webkit-transform: scaleX(0);
+    transform: scaleX(0);
+    -webkit-transition: all 0.3s    ease-in-out 0s;
+    transition: all 0.3s ease-in-out 0s;
+}
+
+nav > ul > li > a:hover:before {
+	 visibility: visible;
+     -webkit-transform: scaleX(1);
+     transform: scaleX(1);	
+}
+
+nav > ul > li > div {
+	border-top: 0;
+	border-radius: 0 0 0.250em 0.250em;
+	box-shadow: 0 0.125em 0.125em -0.063em rgba(0, 0, 0, 0.055);
+	position: absolute;
+	width: 10.313em;
+	z-index: 100;
+	display:none;
+	
+	-webkit-transiton: opacity 0.2s;
+	-moz-transition: opacity 0.2s;
+	-ms-transition: opacity 0.2s;
+	-o-transition: opacity 0.2s;
+	-transition: opacity 0.2s;
+}
+
+/*** Make dropdown list items block display ***/
+nav > ul > li > div ul > li {
+	display: block;
+}
+
+/*** Style dropdown list items ***/
+nav > ul > li > div ul > li > a {
+	display: block;
+	padding: 0.750em 1.5em;
+	color:#FFF;
+	    text-shadow:
+    -1px -1px 0 #000,
+    1px -1px 0 #000,
+    -1px 1px 0 #000,
+    1px 1px 0 #000;
+	//text-decoration: none;
+}
+
+/*** Add hover effect for dropdown list items ***/
+nav > ul > li > div ul > li:hover > a {
+	color:#666;
+}
+
+/*** Show div when it is being li is being hovered over ***/
+nav > ul > li:hover > div {
+	display: inline-block;
+	opacity: 1;
+}
+
+.experience {
+	width:100%;
+	height:75%;
+	position:relative;
+	font-size:2.5em;
+	font-weight:bold;
+	font-family:"Oswald", Georgia, "Times New Roman", Times, serif;	
+	text-align:center;
+	color:#FFF;
+	box-shadow: 0 0.125em 0.125em -0.063em rgba(0, 0, 0, 0.5);	
+	-moz-box-shadow: 0 0.125em 0.125em -0.063em rgba(0, 0, 0, 0.5);	
+	-webkit-box-shadow: 0 0.125em 0.125em -0.063em rgba(0, 0, 0, 0.5);	
+}
+
+.experience > img {
+	padding-top:5%;	
+}
+
+#androidgame {
+	background-color: #099;
+	z-index:300;
+}
+
+#androidgame > .normalfontsize {
+//	float:right;	
+}
+
+
+.normalfontsize {
+	color:#000;	
+}
+
+.experience > .normalfontsize {
+	font-family:"Ubuntu", Georgia, "Times New Roman", Times, serif;	
+	font-weight:normal;
+}
+
+#plasmamodz {
+	background-color: #0C0;
+	z-index:299;
+}
+
+#cydeonworld {
+	background-color: #F00;
+	z-index:298;
+}
+
+/*** Create drop-down carrot **/
+.carrot {
+	border-top: 0.250em solid #aaa;
+	border-right: 0.250em solid transparent;
+	border-left: 0.250em solid transparent;
+	content: "";
+	display: inline-block;
+	height: 0;
+	width: 0;
+	vertical-align: middle;
+	
+	-webkit-transition: color 0.1s linear;
+	-moz-transition: color 0.1s linear;
+	-o-transition: color 0.1s linear;
+	  transition: color 0.1s linear; 
+}

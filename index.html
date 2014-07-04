@@ -2,44 +2,48 @@
 <html>
 <head>
 <meta charset="utf-8">
-<link rel="stylesheet" type="text/css" href="./universal/stylesheet/headerfooter.css">
-<link rel="stylesheet" type="text/css" href="./universal/stylesheet/main.css">
-<link rel="stylesheet" type="text/css" href="./home/home.css">
-<link href='http://fonts.googleapis.com/css?family=Roboto' rel='stylesheet' type='text/css'>
-<title>Joseph O'Neill</title>
+<link href='http://fonts.googleapis.com/css?family=Roboto:400,700' rel='stylesheet' type='text/css'>
+<link href='http://fonts.googleapis.com/css?family=Oswald:700' rel='stylesheet' type='text/css'>
+<link href='http://fonts.googleapis.com/css?family=Ubuntu:400,700' rel='stylesheet' type='text/css'>
+<link href='http://fonts.googleapis.com/css?family=Lato' rel='stylesheet' type='text/css'>
+<link rel="stylesheet" type="text/css" href="css/index.css">
+<title>Untitled Document</title>
 </head>
 
 <body>
-
-<!-- Begin navbar -->
-<header>
-  <nav>
-     <ul>
-	 <!-- Remove whitespace from inline-block -->
-        <li><a href="index.html">Home</a></li
-		><li>
-            <a>Projects <span class="carrot"></span></a>
-            <div>
-                <ul>
-                    <li><a href="cydeonworld.html">Cydeon World</a></li
-					><li><a href="plasmamodz.html">Plasma Modz</a></li
-					><li><a href="futurepingpong.html">Future Ping Pong</a></li>
-                </ul>
-            </div>
-        </li
-		><li><a href="contact.html">Contact</a></li
-		><li><a href="help.html">Test3</a></li>
-    </ul>
-  </nav>
-</header>
-<!-- End navbar -->
-
-<p id="lolbig">EASTER EGG!!!</p>
-<p id="abs">Test</p>
-<!-- Begin footer -->
-<footer>
-	<p id="copyright">&copy; 2014 Joseph O'Neill</p>
-</footer>
-<!-- End footer -->
+	<header>	
+    <div id="opening">
+    	<a id="title" href="#">Joseph O'Neill</a>
+		<nav>
+       		<ul>
+        		<li><a>Home</a></li
+                ><li><a>About</a></li
+                ><li id="projectdropbox"><a>Projects <span class="carrot"></span></a>
+                    <canvas id="tiledCanvas"></canvas>
+                	<div id="projectlist">
+                    	<ul>
+                        	<li><a>Cydeon World</a></li>
+                            <li><a>PlasmaModz</a></li>
+                            <li><a>Future "Ping" Pong</a></li>
+                        </ul>
+                    </div>
+                </li>
+       		</ul>
+        </nav>
+    </div>
+	</header>
+	<div id="body">
+    	<div class="experience" id="androidgame">
+        	<p>Android Game Development</p>
+            <p class="normalfontsize">Ping Pong Advanced</p>
+            <img src="images/pingpong.gif" alt="Gif of Future Ping Pong"/>
+        </div>
+        <div class="experience" id="plasmamodz"><p class="minitext">test</p></div>
+        <div class="experience" id="cydeonworld"></div>
+	</div>
+    
+<script src="http://code.jquery.com/jquery-latest.js"></script>
+<script src="js/tiledbackground.js"></script>
+<script src="js/index.js"></script>
 </body>
 </html>
