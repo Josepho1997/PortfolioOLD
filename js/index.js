@@ -14,12 +14,12 @@ $(document).ready(function(){
    	   mouseenter: function () {
 		  if(!$("#projectlist").is(':animated')) {
 		  $("#projectlist").css("display", "block");
-		  $("#projectlist").animate({height:projectListHeight},800);
+		  $("#projectlist").animate({height:projectListHeight},500);
 		  }
 	    },
    	   mouseleave: function () {
 		  if(sizeUpAnimationDone) {
-          $("#projectlist").animate({height:"0em"},800);
+          $("#projectlist").animate({height:"0em"},500);
 		  sizeUpAnimationDone = false;
 		  $("#projectlist").promise().done(function() {
 			    sizeUpAnimationDone = true;
